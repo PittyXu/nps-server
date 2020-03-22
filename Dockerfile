@@ -1,4 +1,4 @@
-FROM alpine:last
+FROM alpine:latest
 MAINTAINER pitty <pitty.xu@gmail.com>
 
 WORKDIR /
@@ -10,8 +10,8 @@ RUN set -x && \
 	cd /nps && \
 	mkdir \npsconf && \
 	cp conf/* npsconf/ && \
-  chmod +x nps && \
-  ./nps install && \
+        chmod +x nps && \
+        ./nps install && \
 	cd .. && \
 	rm -rf *.tar.gz
 
