@@ -5,15 +5,13 @@ WORKDIR /
 ENV NPS_VERSION 0.26.5
 
 RUN set -x && \
-	wget --no-check-certificate https://github.com/ehang-io/nps/releases/download/v${NPS_VERSION}/linux_amd64_server.tar.gz && \ 
-	tar xzf linux_amd64_server.tar.gz && \
-	cd /nps && \
-	mkdir \npsconf && \
-	cp conf/* npsconf/ && \
-        chmod +x nps && \
-        ./nps install && \
-	cd .. && \
-	rm -rf *.tar.gz
+    mkdir /nps && \
+    cd /nps && \
+    wget --no-check-certificate https://github.com/ehang-io/nps/releases/download/v${NPS_VERSION}/linux_amd64_server.tar.gz && \ 
+    tar xzf linux_amd64_server.tar.gz && \
+    chmod +x nps && \
+    ./nps install && \
+    rm -rf *.tar.gz
 
 VOLUME /nps/conf
 
