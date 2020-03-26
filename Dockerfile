@@ -12,11 +12,4 @@ RUN set -x && \
     /nps/nps install && \
     rm -rf *.tar.gz
 
-VOLUME /nps/conf
-
-EXPOSE 80
-EXPOSE 443
-EXPOSE 8080
-EXPOSE 8024
-
-CMD /nps/nps
+ENTRYPOINT ["/nps/nps"]
