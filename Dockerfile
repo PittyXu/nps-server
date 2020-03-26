@@ -11,4 +11,4 @@ RUN set -x && \
     /nps/nps install && \
     rm -rf linux_amd64_server.tar.gz
 
-# ENTRYPOINT ["/nps/nps"]
+CMD ["/nps/nps"]
