@@ -6,10 +6,9 @@ ENV NPS_VERSION 0.26.5
 
 RUN set -x && \
     wget --no-check-certificate https://github.com/ehang-io/nps/releases/download/v${NPS_VERSION}/linux_amd64_server.tar.gz && \ 
-    mkdir \nps && \
+    mkdir /nps && \
     tar xzf linux_amd64_server.tar.gz -C /nps && \
-    cd /nps && \
     /nps/nps install && \
-    rm -rf *.tar.gz
+    rm -rf linux_amd64_server.tar.gz
 
 ENTRYPOINT ["/nps/nps"]
